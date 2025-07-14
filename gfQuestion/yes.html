@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="./yes_style.css">
+        
+    </head> 
+
+    <body>
+        <audio id="hannahmontana" src="./audio/hannah-montana-transicion-2_OJ4U7Tx.mp3" autoplay muted></audio>
+        <div class="container">
+            <div >
+                <h1 class = "header_text"> <bold>Yippee!!!</bold></h1>
+            </div>
+            <div class="yippee">
+                <img src="https://media.tenor.com/bWUeVRqW9-IAAAAi/fast-cat-cat-excited.gif" alt="yippeecat">
+            </div>
+        </div>
+        <button class="btn" id="unmute" ><bold>CLICK MEEE</bold></button>
+        <script>
+            const audio = document.getElementById('hannahmontana');
+            const unmuteButton = document.getElementById('unmute');
+
+            // Attempt to play the audio. Since it's 'autoplay muted' in HTML,
+            // this initial play should succeed, but silently.
+            audio.play().then(() => {
+                console.log('Audio playback started successfully (muted).');
+                // Check if it's actually unmuted (unlikely for first play)
+                if (!audio.muted) {
+                    unmuteButton.style.display = 'none'; // No need for button if already unmuted
+                }
+            }).catch(error => {
+
+                console.warn('Initial autoplay attempt (muted) had an issue:', error.message);
+
+                unmuteButton.style.display = 'block';
+            });
+
+            // Add event listener to the unmute button
+            unmuteButton.addEventListener('click', () => {
+                audio.muted = false; // Set muted to false
+                audio.play().then(() => {
+                    console.log('Audio unmuted and playing after user interaction.');
+                    unmuteButton.style.display = 'none'; // Hide the button once unmuted
+                }).catch(err => {
+                    console.error('Failed to play after user interaction:', err);
+                });
+            });
+
+            audio.addEventListener('ended', () => {
+            });
+
+        </script>
+    </body> 
+</html>
