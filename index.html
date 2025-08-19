@@ -24,7 +24,7 @@
         async function submitRespo(){
             const responseData = {
                 response: "yes",
-                timestamp: new Data().toISOString()
+                timestamp: new Date().toISOString()
             };
             try {
                 const response = await fetch('/.netlify/functions/submit-respo', {
