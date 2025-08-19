@@ -2,8 +2,8 @@ const { MongoClient } = require('mongodb');
 
 // Use environment variables for the MongoDB connection string.
 const uri = process.env.MONGODB_URI; // This needs to be set in Netlify's UI.
-const dbName = process.env.MONGODB_DBNAME || 'your_default_db_name'; // Default database name.  Set this in Netlify!
-const collectionName = process.env.MONGODB_COLLECTION || 'yes_responses'; // Set default collection
+const dbName = process.env.MONGODB_DBNAME; // Default database name.  Set this in Netlify!
+const collectionName = process.env.MONGODB_COLLECTION; // Set default collection
 
 let cachedClient = null; // Store the MongoClient instance to reuse connections
 
