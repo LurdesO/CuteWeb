@@ -157,6 +157,26 @@ body { overflow: hidden }
     -moz-animation: moveclouds 10s linear infinite;
     -o-animation: moveclouds 10s linear infinite;
 }
+
+.x11 {
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    transform: scale(0.9);
+    opacity: 0.2;
+    -webkit-animation: moveclouds 15s linear infinite, sideWaysRight 4s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 15s linear infinite;
+    -o-animation: moveclouds 15s linear infinite;
+}
+
+.x12 {
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    transform: scale(0.9);
+    opacity: 0.2;
+    -webkit-animation: moveclouds 15s linear infinite, sideWaysRight 3s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 15s linear infinite;
+    -o-animation: moveclouds 15s linear infinite;
+}
 @-webkit-keyframes moveclouds { 
     0% { 
         top: 500px;
@@ -172,6 +192,14 @@ body { overflow: hidden }
     }
     100% { 
         margin-left:50px;
+    }
+}
+@-webkit-keyframes sideWaysRight{
+    0% {
+        margin-right:0px;
+    }
+    100% {
+        margine-right:50px;
     }
 }
 
