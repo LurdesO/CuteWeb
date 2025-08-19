@@ -17,9 +17,36 @@
     </div>
 
     <div class = "buttons">
-        <button class="btn" id="yesButt" onclick="nextPage()">Yes</button>
+        <button class="btn" id="yesButt" onclick="submitRespo()">Yes</button>
         <button class="btn" id="noButt" onmouseover="moveButton()" onclick="moveButton()">No</button>
     <script>
+
+        async function submitRespo(){
+            const responseData = {
+                response: "yes",
+                timestamp: new Data().toISOString()
+            };
+            try {
+                const response = await fetch('/.netlify/functions/submit-respo', {
+                    method: 'Post',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(responseData)
+                });
+
+                if(response.ok){
+                    console.log('YAYYY HOPEFULY THIS MESSAGE SHOWS UP CAUSE IT MEANS YOU SAID YES');
+                    window.location.href = "yes.html";
+                } else {
+                    console.error('Error submitting response:', response.status);
+                    alert('danggg. there was an error submitting your response. please please please try again!!!!.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('danngggg. there was an error submitting your response. please please please try again');
+            }
+        }
         function nextPage() {
             window.location.href = "yes.html";
         }
