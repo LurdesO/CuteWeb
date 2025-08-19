@@ -159,6 +159,7 @@ body { overflow: hidden }
 }
 
 .x11 {
+    right: 100px;
     -webkit-transform: scale(0.9);
     -moz-transform: scale(0.9);
     transform: scale(0.9);
@@ -169,16 +170,48 @@ body { overflow: hidden }
 }
 
 .x12 {
+    right: 200px;
     -webkit-transform: scale(0.9);
     -moz-transform: scale(0.9);
     transform: scale(0.9);
     opacity: 0.2;
-    -webkit-animation: moveclouds 15s linear infinite, sideWaysRight 3s ease-in-out infinite alternate;
-    -moz-animation: moveclouds 15s linear infinite;
-    -o-animation: moveclouds 15s linear infinite;
+    -webkit-animation: moveclouds 27s linear infinite, sideWaysRight 3s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 27s linear infinite;
+    -o-animation: moveclouds 27s linear infinite;
+}
+.x13 {
+    right: 500px;
+    -webkit-transform: scale(0.98);
+    -moz-transform: scale(0.98);
+    transform: scale(0.98);
+    opacity: 0.2;
+    -webkit-animation: moveclouds 20s linear infinite, sideWaysRight 4.2s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 20s linear infinite;
+    -o-animation: moveclouds 20s linear infinite;
+}
+.x14 {
+    right: 330px;
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    transform: scale(0.9);
+    opacity: 0.2;
+    -webkit-animation: moveclouds 22s linear infinite, sideWaysRight 2.5s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 22s linear infinite;
+    -o-animation: moveclouds 22s linear infinite;
+}
+
+.x15 {
+    right: 55px;
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    transform: scale(0.9);
+    opacity: 0.2;
+    -webkit-animation: moveclouds 17s linear infinite, sideWaysRight 7s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 17s linear infinite;
+    -o-animation: moveclouds 17s linear infinite;
 }
 @-webkit-keyframes moveclouds { 
-    0% { 
+    0% {
         top: 500px;
     }
     100% { 
@@ -194,12 +227,12 @@ body { overflow: hidden }
         margin-left:50px;
     }
 }
-@-webkit-keyframes sideWaysRight{
+@-webkit-keyframes sideWaysRight {
     0% {
         margin-right:0px;
     }
     100% {
-        margine-right:50px;
+        margin-right:150px;
     }
 }
 
